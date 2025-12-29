@@ -98,7 +98,7 @@ function App() {
                 <span>🎓</span>
                 <div>
                   <h4>Licenciada en Psicología</h4>
-                  <p>UTP | <strong>C.Ps.P. 123456</strong></p>
+                  <p>UTP | <strong>C.Ps.P. 19870</strong></p>
                 </div>
               </div>
             </div>
