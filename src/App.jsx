@@ -143,12 +143,9 @@ function App() {
                 <strong>⏱️ Duración:</strong> {servicioSeleccionado.duracion}
               </div>
             </div>
-            <button className="btn-enviar" onClick={() => {setServicioSeleccionado(null); setMostrarForm(true);}}>
-              Agendar consulta sobre este servicio
-              <button className="btn-agendar">
+            <button className="btn-agendar" onClick={() => {/* tu función aquí */}}>
   Agendar consulta sobre este servicio
 </button>
-            </button>
           </div>
         </div>
       )}
