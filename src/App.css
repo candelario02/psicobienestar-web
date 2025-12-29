@@ -327,35 +327,44 @@
   border-left: 4px solid var(--verde-medio); 
   font-size: 0.9rem; 
 }
-
 /* ==========================================================================
-   9. DISEÑO RESPONSIVO (MÓVILES)
+   9. DISEÑO RESPONSIVO (MÓVILES) - UNIFICADO
    ========================================================================== */
-/* DISEÑO PARA CELULARES (RESPONSIVE) */
-@media (max-width: 768px) {
-  /* Las tarjetas de servicios se pondrán una debajo de otra */
-  .servicios-grid {
-    grid-template-columns: 1fr !important; 
-    gap: 20px;
-    padding: 20px;
-  }
-
-  /* Los botones principales se ponen uno arriba del otro */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Ajuste de los botones del inicio para que no choquen */
   .hero-buttons {
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
   }
 
   .btn-agendar, .btn-consulta {
     width: 90% !important;
     max-width: 300px;
+    margin: 0 auto;
   }
 
-  /* La foto y el texto de presentación se centran */
+  /* 2. Foto de perfil y presentación centrada */
   .sobre-mi-contenido {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* 3. GRID DE SERVICIOS: Una sola columna como en tu App de Clima */
+  .servicios-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 20px !important;
+    gap: 20px !important;
+  }
+
+  .servicio-card {
+    width: 100% !important; /* Ahora ocupará todo el ancho disponible */
+    max-width: 350px; /* Evita que se estire demasiado en tablets */
+    margin: 0 !important;
   }
 }
