@@ -145,6 +145,9 @@ function App() {
             </div>
             <button className="btn-enviar" onClick={() => {setServicioSeleccionado(null); setMostrarForm(true);}}>
               Agendar consulta sobre este servicio
+              <button className="btn-agendar">
+  Agendar consulta sobre este servicio
+</button>
             </button>
           </div>
         </div>
