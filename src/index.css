@@ -1,0 +1,21 @@
+/* index.css - Configuración Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Para que los tamaños sean exactos */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f8f3;
+}
+
+html {
+  scroll-behavior: smooth; /* Para que al hacer clic en el menú baje suavemente */
+}
