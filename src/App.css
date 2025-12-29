@@ -331,35 +331,31 @@
 /* ==========================================================================
    9. DISEÑO RESPONSIVO (MÓVILES)
    ========================================================================== */
+/* DISEÑO PARA CELULARES (RESPONSIVE) */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 1.8rem;
-    padding: 0 20px;
+  /* Las tarjetas de servicios se pondrán una debajo de otra */
+  .servicios-grid {
+    grid-template-columns: 1fr !important; 
+    gap: 20px;
+    padding: 20px;
   }
 
+  /* Los botones principales se ponen uno arriba del otro */
   .hero-buttons {
     flex-direction: column;
-    gap: 15px;
+    display: flex;
     align-items: center;
+    gap: 10px;
   }
 
   .btn-agendar, .btn-consulta {
-    width: 90%;
-    max-width: 300px; /* Para que no sean exageradamente anchos */
+    width: 90% !important;
+    max-width: 300px;
   }
 
+  /* La foto y el texto de presentación se centran */
   .sobre-mi-contenido {
     flex-direction: column;
     text-align: center;
-  }
-
-  .foto-redonda {
-    margin-bottom: 20px;
-  }
-
-  .servicios-grid {
-    grid-template-columns: 1fr; /* Esto arregla las tarjetas flacas */
-    padding: 20px;
-    gap: 20px;
   }
 }
