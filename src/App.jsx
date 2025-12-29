@@ -3,11 +3,12 @@ import './App.css';
 import fotoPerfil from './assets/psicologa.jpg'; 
 
 function App() {
-  // ESTADOS: Controlan qué se muestra en pantalla (modales)
+  // ESTADOS CORREGIDOS: 
+  // Usaremos 'mostrarForm' para controlar el formulario de contacto.
   const [mostrarForm, setMostrarForm] = useState(false);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
 
-  // BASE DE DATOS DE SERVICIOS: Aquí modificas los textos de las tarjetas
+  // BASE DE DATOS DE SERVICIOS
   const serviciosInfo = {
     individual: {
       titulo: "Terapia Individual",
@@ -116,36 +117,53 @@ function App() {
         ))}
       </section>
 
-      {/* 5. MODAL DE DETALLE DE SERVICIO (Abre al dar clic en "Saber más") */}
+      {/* 5. MODAL DE DETALLE DE SERVICIO */}
       {servicioSeleccionado && (
         <div className="modal-overlay" onClick={() => setServicioSeleccionado(null)}>
           <div className="form-card modal-detallado" onClick={e => e.stopPropagation()}>
             <button className="btn-cerrar" onClick={() => setServicioSeleccionado(null)}>×</button>
+            
             <div className="modal-header">
               <span className="icono-grande">{servicioSeleccionado.icono}</span>
               <h2>{servicioSeleccionado.titulo}</h2>
             </div>
+
             <div className="modal-body">
               <p>{servicioSeleccionado.resumen}</p>
+              
               <div className="info-seccion">
                 <h4>📌 Ruta del Tratamiento</h4>
                 <ul>
-                  {servicioSeleccionado.metodologia.map((paso, i) => <li key={i}>{paso}</li>)}
+                  {servicioSeleccionado.metodologia.map((paso, i) => (
+                    <li key={i}>{paso}</li>
+                  ))}
                 </ul>
               </div>
+
               <div className="info-seccion">
                 <h4>✅ Beneficios</h4>
                 <div className="tags-beneficios">
-                  {servicioSeleccionado.beneficios.map((b, i) => <span key={i} className="tag">{b}</span>)}
+                  {servicioSeleccionado.beneficios.map((b, i) => (
+                    <span key={i} className="tag">{b}</span>
+                  ))}
                 </div>
               </div>
+
               <div className="duracion-box">
                 <strong>⏱️ Duración:</strong> {servicioSeleccionado.duracion}
               </div>
             </div>
-            <button className="btn-agendar" onClick={() => {/* tu función aquí */}}>
-  Agendar consulta sobre este servicio
-</button>
+
+            {/* AQUÍ ESTABA EL ERROR: Cambiamos setModalAbierto por setMostrarForm */}
+            <button 
+              className="btn-agendar" 
+              onClick={() => {
+                setServicioSeleccionado(null);
+                setMostrarForm(true);
+              }}
+            >
+              Agendar consulta sobre este servicio
+            </button>
           </div>
         </div>
       )}
